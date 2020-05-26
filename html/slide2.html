@@ -22,11 +22,49 @@
   <area shape="rect" coords="22,127,165,197" href="slide3.html">
 	 <area shape="rect" coords="228,209,307,253" href="leftarrow.html">
 <area shape="rect" coords="321,208,405,250" href="rightarrow.html">
+
+<area shape="rect" coords="350,140,450,180" href="#" onMouseDown="horn.play(); changehorn();" onMouseUp="horn.pause(); changehorn1()">>
+
+  <area shape="rect" coords="345,82,450,125" href="#" onMouseDown="wail.play(); changewail();" onMouseUp="wail.pause(); changewail1();">>
+
 </map>
 
 <script src="js/imageMapResizer.js"></script>
 <script>
 	imageMapResize();
+
+  var horn = new Audio();
+    horn.src = '../sound/horn.mp3';
+  
+    var wail = new Audio();
+    wail.src = '../sound/wail.wav';
+
+    function changewail() {
+      var img = document.getElementById("Control");
+    img.src="../Control/Control/Slide2 wail.jpg";
+    return false;
+    }
+
+    function changewail1() {
+      var img = document.getElementById("Control");
+    img.src="../Control/Slide2.jpg";
+    wail.currentTime = '0';
+    return false;
+    }
+    
+    function changehorn() {
+      var img = document.getElementById("Control");
+    img.src="../Control/Control/Slide2 horn.jpg";
+    return false;
+    }
+
+    function changehorn1() {
+      var img = document.getElementById("Control");
+    img.src="../Control/Slide2.jpg";
+    wail.currentTime = '0';
+    return false;
+    }
+
 </script>
 
 </body>
